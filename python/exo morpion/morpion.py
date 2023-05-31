@@ -10,8 +10,6 @@ class Morpion:
     def __init__(self):
         self.grid = []
 
-
-
     def create_grid(self):
         for i in range(3):
             row = []
@@ -19,20 +17,15 @@ class Morpion:
                 row.append('-')
             self.grid.append(row)
 
-
-
     def get_random_first_player(self):
         return random.randint(0, 1)
-
-
 
     def fix_spot(self, row, col, player):
         self.grid[row][col] = player
 
-
-
     def is_player_win(self, player):
         win = None
+
         n = len(self.grid)
 
         # checking rows
@@ -79,9 +72,6 @@ class Morpion:
                     return False
         return True
 
-
-
-
     def is_grid_filled(self):
         for row in self.grid:
             for item in row:
@@ -89,23 +79,14 @@ class Morpion:
                     return False
         return True
 
-
-
-
     def swap_player_turn(self, player):
         return 'X' if player == 'O' else 'O'
-
-
-
 
     def show_grid(self):
         for row in self.grid:
             for item in row:
                 print(item, end=" ")
             print()
-
-
-
 
     def start(self):
         self.create_grid()
