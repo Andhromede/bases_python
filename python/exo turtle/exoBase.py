@@ -114,17 +114,109 @@
 # PART 4
 # ------------------------------------------------------------
 # # EXO 1 :
-nb = int(input("Entrez un nombre svp : "))
+# nb = int(input("Entrez un nombre svp : "))
 
-for i in range (nb):
-    i+=1
-    ligne = ""
-    for j in range (i):
-        j+=1
-        ligne+="#"
-    print(ligne)   
+# for i in range (nb):
+#     i+=1
+#     ligne = ""
+#     for j in range (i):
+#         j+=1
+#         ligne+="#"
+#     print(ligne)   
         
 
+# ------------------------------------------------------------
+# # EXO 2 :
+# def totalNotes(tab):
+#     total = 0
+#     for j in tab:
+#         total += j
+#     return total
+
+# i = 1
+# tab = []
+
+# while i <= 5:
+#     nb = (int(input("Veuillez entrez le nombre svp : ")))
+#     tab.append(nb)
+#     i+=1
+
+# print(totalNotes(tab))
+
+
+# ------------------------------------------------------------
+# # EXO 3 :
+# def moyenneNotes(tab):
+#     moyenne = 0
+#     for j in tab:
+#         moyenne += j
+#     return moyenne/len(tab)
+
+# i = 1
+# tab = []
+
+# while i <= 5:
+#     nb = (int(input("Veuillez entrez le nombre svp : ")))
+#     tab.append(nb)
+#     i+=1
+
+# print(moyenneNotes(tab))
+
+
+# ------------------------------------------------------------
+# # EXO 4 :
+# for i in range (100):
+#     if i%3 == 0 and i%5 == 0 :
+#         print(str(i) + " = Fizz Fuzz")
+#     if i%3 == 0 and i%5 != 0 :
+#         print(str(i) + " = Fizz")
+#     if i%5 == 0 and and i%3 != 0:
+#         print (str(i) + " = Fuzz")
+#     else :
+#         print(i)
+
+
+# ------------------------------------------------------------
+# # EXO 5 :
+# tab = [1, "test", 0.9867, "Python, c'est génial !"]
+
+# def inverser(tab):
+#     return list(reversed(tab))
+
+# print(inverser(tab))
+# print(tab)
+
+
+# ------------------------------------------------------------
+# # EXO 6 :
+# dictionnaire = {
+#     "voiture": "véhicule à quatre roues", 
+#     "velo": "véhicule à deux roues",
+#     "bateau": "véhicule maritime",
+#     "avion": "véhicule volant",
+# }
+
+# mots = input("Entrez un mot svp : ")
+
+# for cle, valeur in dictionnaire.items() :
+#     if mots == cle:
+#         print(valeur)
+
+
+# ------------------------------------------------------------
+# # EXO 7 :
+# import random
+# tab =[]
+
+# for i in range (100):
+#     tab.append(random.randint(1,100))
+
+# print(len(tab))
+# print(tab)
+
+
+# ------------------------------------------------------------
+# # EXO 8 :
 
 
 
