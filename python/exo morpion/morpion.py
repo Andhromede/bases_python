@@ -8,31 +8,38 @@ class Morpion:
     self = objet cible permettant d'acceder aux attributs/fonctionnalités
     """
     def __init__(self):
-        self.board = []
+        self.grid = []
 
-    def create_board(self):
+
+
+    def create_grid(self):
         for i in range(3):
             row = []
             for j in range(3):
                 row.append('-')
-            self.board.append(row)
+            self.grid.append(row)
+
+
 
     def get_random_first_player(self):
         return random.randint(0, 1)
 
+
+
     def fix_spot(self, row, col, player):
-        self.board[row][col] = player
+        self.grid[row][col] = player
+
+
 
     def is_player_win(self, player):
         win = None
-
-        n = len(self.board)
+        n = len(self.grid)
 
         # checking rows
         for i in range(n):
             win = True
             for j in range(n):
-                if self.board[i][j] != player:
+                if self.grid[i][j] != player:
                     win = False
                     break
             if win:
@@ -42,7 +49,7 @@ class Morpion:
         for i in range(n):
             win = True
             for j in range(n):
-                if self.board[j][i] != player:
+                if self.grid[j][i] != player:
                     win = False
                     break
             if win:
@@ -51,7 +58,7 @@ class Morpion:
         # checking diagonals
         win = True
         for i in range(n):
-            if self.board[i][i] != player:
+            if self.grid[i][i] != player:
                 win = False
                 break
         if win:
@@ -59,43 +66,55 @@ class Morpion:
 
         win = True
         for i in range(n):
-            if self.board[i][n - 1 - i] != player:
+            if self.grid[i][n - 1 - i] != player:
                 win = False
                 break
         if win:
             return win
         return False
 
-        for row in self.board:
+        for row in self.grid:
             for item in row:
                 if item == '-':
                     return False
         return True
 
-    def is_board_filled(self):
-        for row in self.board:
+
+
+
+    def is_grid_filled(self):
+        for row in self.grid:
             for item in row:
                 if item == '-':
                     return False
         return True
+
+
+
 
     def swap_player_turn(self, player):
         return 'X' if player == 'O' else 'O'
 
-    def show_board(self):
-        for row in self.board:
+
+
+
+    def show_grid(self):
+        for row in self.grid:
             for item in row:
                 print(item, end=" ")
             print()
 
+
+
+
     def start(self):
-        self.create_board()
+        self.create_grid()
 
         player = 'X' if self.get_random_first_player() == 1 else 'O'
         while True:
             print(f"Player {player} turn")
 
-            self.show_board()
+            self.show_grid()
 
             # taking user input
             row, col = list(
@@ -111,16 +130,16 @@ class Morpion:
                 break
 
             # checking whether the game is draw or not
-            if self.is_board_filled():
+            if self.is_grid_filled():
                 print("Match Draw!")
                 break
 
             # swapping the turn
             player = self.swap_player_turn(player)
 
-        # showing the final view of board
+        # showing the final view of grid
         print()
-        self.show_board()
+        self.show_grid()
 
 
 # starting the game
